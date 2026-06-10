@@ -3,83 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ</title>
-
-  <style>
-    body{
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;  /* center horizontally */
-      align-items: center;      /* center vertically */
-      padding: 24px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-
-    .content{
-      width: 100%;
-      max-width: 720px;
-    }
-
-    /* keeps the "plain text" feel */
-    pre{
-      margin: 0;
-      white-space: pre-wrap;   /* wraps long lines */
-      line-height: 1.6;
-      font-family: inherit;    /* looks like normal text */
-    }
-
-    .back{
-      margin-top: 18px;
-      text-align: center;
-    }
-
-    a{
-      text-decoration: none;
-    }
-  </style>
-
+  <title>FAQ · Nyan Lin Naing</title>
+  <meta name="description" content="Frequently asked questions about Nyan Lin Naing." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-<div class="content">
-    <pre>
-faq
+  <div class="container page-container">
+    <header class="site-header compact">
+      <p><a href="./">← Home</a></p>
+      <h1>FAQ</h1>
+    </header>
 
-personal details:
+    <main>
+      <section class="section faq-section" aria-labelledby="personal-title">
+        <h2 id="personal-title">Personal details</h2>
+        <dl>
+          <dt>Age?</dt>
+          <dd>25</dd>
 
-age?
-25
+          <dt>Birthday?</dt>
+          <dd>29/09/2000</dd>
 
-birthday
-29/09/2000
+          <dt>Ethnicity?</dt>
+          <dd>Burmese</dd>
 
-ethnicity?
-burmese
+          <dt>Where are you from?</dt>
+          <dd>Mandalay, Myanmar</dd>
 
-where are you from?
-mandalay,myanmar
+          <dt>Where are you based?</dt>
+          <dd>Newcastle upon Tyne, UK</dd>
+        </dl>
+      </section>
 
-where are you based?
-newcastle upon tyne, uk
+      <section class="section faq-section" aria-labelledby="study-title">
+        <h2 id="study-title">Study and work</h2>
+        <dl>
+          <dt>What are you studying?</dt>
+          <dd>Postgraduate data science at the University of Sunderland.</dd>
 
-what are you studying?
-postgraduate data science at the university of sunderland
+          <dt>Are you looking for work?</dt>
+          <dd>Yes. I am currently looking for an internship in data roles.</dd>
 
-work:
-yes currently looking for an internship in data roles.
+          <dt>Why do you stream study-with-me sessions?</dt>
+          <dd>To inspire people toward self betterment.</dd>
 
-why do i stream study with me?
-to inspire people for self betterment
-
-what are you up to right now?
-assignments + streaming
-    </pre>
-
-  <p class="back">
-    <a href="./">← Back to home</a>
-  </p>
-</div>
+          <dt>What are you up to right now?</dt>
+          <dd>Assignments and streaming.</dd>
+        </dl>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

@@ -3,45 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Nyan Lin Naing</title>
-  <meta name="description" content="Personal site for Nyan Lin Naing. Writing, projects, and contact." />
-
+  <meta name="description" content="Personal website for Nyan Lin Naing, a postgraduate data science student based in Newcastle upon Tyne." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-<div class="wrap">
-  <header>
-    <h1>
-      Nyan Lin Naing
-    </h1>
+  <div class="container">
+    <header class="site-header">
+      <h1>Nyan Lin Naing</h1>
 
-    <nav>
-      <a href="./about.html">about</a>
-      <a href="./faq.html">faq</a>
-<!--      <a href="./blog.html/">blog</a>-->
-<!--      <a href="./projects.html">projects</a>-->
-      <a href="./contact.html">contact</a>
-    </nav>
-  </header>
+      <nav class="top-links" aria-label="Social and resource links">
+        <a href="https://github.com/nynln" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/nyanln/" rel="noopener">LinkedIn</a>
+        <a href="mailto:nyanlinnainguk@gmail.com">Email</a>
+        <a href="./resume.pdf">Resume</a>
+      </nav>
 
-  <main>
+      <nav class="page-links" aria-label="Website pages">
+        <a href="./about.html">About Me</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
 
-<!--    <div class="links">-->
-<!--      <a href="https://github.com/">github</a>-->
-<!--      <a href="https://www.linkedin.com/">linkedin</a>-->
-<!--      <a href="./resume.pdf">resume</a>-->
-<!--    </div>-->
-<!--  </main>-->
+    <main>
+      <section class="section" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <p>
+          I am a 25-year-old Burmese postgraduate data science student at the University of Sunderland,
+          currently based in Newcastle upon Tyne, UK.
+        </p>
+        <p>
+          I am looking for an internship in data roles. Right now, I am focused on assignments,
+          improving my data skills, and streaming study-with-me sessions to inspire self betterment.
+        </p>
+        <p><a class="button-link" href="./about.html">Read More</a></p>
+      </section>
 
-  <footer>
-    <span id="year"></span>
-  </footer>
-</div>
+      <section class="section" aria-labelledby="resources-title">
+        <h2 id="resources-title">Resources</h2>
+        <div class="list-cards">
+          <article>
+            <h3><a href="./resume.pdf">Resume</a></h3>
+            <p>My current CV as a PDF.</p>
+          </article>
+          <article>
+            <h3><a href="https://github.com/nynln" rel="noopener">GitHub</a></h3>
+            <p>Projects, code, and technical work.</p>
+          </article>
+          <article>
+            <h3><a href="https://www.linkedin.com/in/nyanln/" rel="noopener">LinkedIn</a></h3>
+            <p>Professional profile and updates.</p>
+          </article>
+        </div>
+      </section>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      <section class="section" aria-labelledby="current-title">
+        <h2 id="current-title">Currently</h2>
+        <div class="updates">
+          <article>
+            <h3>Data internship search</h3>
+            <p>I am actively looking for internship opportunities in data-focused roles.</p>
+            <a href="./contact.html">Contact Me</a>
+          </article>
+          <article>
+            <h3>Study-with-me streams</h3>
+            <p>I stream study sessions while working on assignments and building consistent habits.</p>
+            <a href="./faq.html">Read FAQ</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Nyan Lin Naing</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

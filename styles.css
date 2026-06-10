@@ -1,65 +1,218 @@
-/* Global typewriter/mono look */
 :root{
-    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --background: #ffffff;
+  --text: #1f2933;
+  --muted: #52606d;
+  --border: #d9e2ec;
+  --soft: #f5f7fa;
+  --accent: #2563eb;
+  --max-width: 760px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-*{ box-sizing: border-box; }
+*{
+  box-sizing: border-box;
+}
 
 body{
-    margin: 0;
-    font-family: var(--mono);
-    line-height: 1.6;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
 }
 
-/* Make headings not look like a different font */
-h1, h2, h3, h4, h5, h6{
-    font-family: var(--mono);
-    font-weight: 600;
+.container{
+  width: min(100% - 32px, var(--max-width));
+  margin: 0 auto;
+  padding: 64px 0 40px;
 }
 
-/* If you use <pre> for that “plain text FAQ” style */
-pre{
-    font-family: var(--mono);
-    white-space: pre-wrap;
-    margin: 0;
+.site-header{
+  margin-bottom: 56px;
+  text-align: center;
 }
 
-/* Optional: links vibe */
+.site-header h1{
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.site-header.compact{
+  margin-bottom: 36px;
+}
+
+.site-header.compact h1{
+  margin-top: 12px;
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+}
+
+.top-links,
+.page-links{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+}
+
+.top-links{
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.page-links{
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
 a{
-    color: inherit;
-    text-decoration: underline;
-}
-a:hover{
-    text-decoration: none;
+  color: var(--accent);
+  text-decoration: none;
 }
 
-/* Center the whole page */
-body{
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;   /* horizontal center */
-    align-items: center;       /* vertical center */
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+a:hover,
+a:focus-visible{
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-/* The page content box */
-.wrap{
-    width: 100%;
-    max-width: 720px;
-    padding: 24px;
-    text-align: center;
+main{
+  display: grid;
+  gap: 44px;
 }
 
-/* Simple spacing */
-header{ margin-bottom: 16px; }
-nav{ margin-top: 10px; }
-nav a{ margin: 0 10px; }
+.section{
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
 
-.links{ margin-top: 18px; }
-.links a{ margin: 0 10px; }
+.section:first-child{
+  padding-top: 0;
+  border-top: 0;
+}
 
-footer{ margin-top: 24px; }
+h2{
+  margin: 0 0 14px;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
 
+h3{
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+p{
+  margin: 0 0 16px;
+}
+
+p:last-child{
+  margin-bottom: 0;
+}
+
+.section p,
+dd,
+address{
+  color: var(--muted);
+}
+
+.button-link{
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.list-cards,
+.updates{
+  display: grid;
+  gap: 18px;
+}
+
+.list-cards article,
+.updates article{
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--soft);
+}
+
+.list-cards p,
+.updates p{
+  margin-bottom: 8px;
+}
+
+dl{
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+dt{
+  font-weight: 700;
+}
+
+dd{
+  margin: -10px 0 4px;
+}
+
+.contact-list{
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list a{
+  overflow-wrap: anywhere;
+}
+
+address{
+  font-style: normal;
+}
+
+footer{
+  margin-top: 56px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 560px){
+  body{
+    font-size: 16px;
+  }
+
+  .container{
+    width: min(100% - 24px, var(--max-width));
+    padding-top: 42px;
+  }
+
+  .site-header{
+    margin-bottom: 42px;
+  }
+
+  .top-links,
+  .page-links{
+    gap: 8px 14px;
+  }
+
+  main{
+    gap: 34px;
+  }
+
+  .list-cards article,
+  .updates article{
+    padding: 16px;
+  }
+}
