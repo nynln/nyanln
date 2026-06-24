@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nyan Lin Naing</title>
+  <meta name="description" content="Nyan Lin Naing — MSc Applied Data Science student, data scientist, Newcastle upon Tyne." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── TOPBAR: theme + nav icons ── -->
+  <div class="topbar">
+    <button class="topbar__btn" id="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="topbar__btn topbar__nav-btn" id="nav-btn" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- ── OVERLAY ── -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ── SIDE NAV ── -->
+  <nav class="sidenav" id="sidenav" aria-hidden="true">
+    <button class="sidenav__close" id="sidenav-close" aria-label="Close">✕</button>
+    <div class="sidenav__scroll">
+      <p class="sidenav__name">Nyan Lin Naing</p>
+      <ul class="sidenav__list">
+        <li><a href="#projects">Things I've Built</a></li>
+        <li><a href="#skills-card">What I Work With</a></li>
+        <li><a href="#background-card">Background</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+        <li><a href="./resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
+      </ul>
+      <div class="sidenav__foot">
+        <a href="https://github.com/nynln" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/nyanln/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:nyanlinnainguk@gmail.com">Email</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__illo-wrap">
+      <img
+        src="./illustration.svg"
+        alt="Nyan Lin Naing at his data science desk — cartoon illustration"
+        class="hero__illo"
+        id="hero-illo"
+      />
+    </div>
+
+    <p class="hero__bio">
+      I'm <strong>Nyan</strong> and I'm a data scientist. I'm an
+      <a href="https://www.sunderland.ac.uk" target="_blank" rel="noopener">MSc Applied Data Science</a>
+      student at the University of Sunderland, based in Newcastle upon Tyne.
+      I love building pipelines, training models, and turning messy data into decisions.
+      Currently looking for a <strong>data science internship from September&nbsp;2026</strong>.
+    </p>
+
+    <div class="hero__sig" aria-label="Signature: Nyan">Nyan</div>
+
+    <div class="hero__links">
+      <a href="https://github.com/nynln" target="_blank" rel="noopener">GitHub</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/nyanln/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="./resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
+  </section>
+
+  <!-- ── CARD FEED ── -->
+  <main class="feed" id="projects" aria-label="Portfolio feed">
+    <div class="feed__col" id="col-left"  aria-label="Left column"></div>
+
+    <div class="feed__divider" aria-hidden="true">
+      <div class="feed__line"></div>
+      <span class="feed__year" id="feed-year">2025</span>
+      <div class="feed__line"></div>
+    </div>
+
+    <div class="feed__col" id="col-right" aria-label="Right column"></div>
+  </main>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <h2 class="contact__title">Get in Touch</h2>
+      <p class="contact__sub">Looking for a data science internship from September 2026. Best reached by email or LinkedIn.</p>
+      <a href="mailto:nyanlinnainguk@gmail.com" class="contact__link">nyanlinnainguk@gmail.com</a>
+      <a href="https://www.linkedin.com/in/nyanln/" target="_blank" rel="noopener" class="contact__link">linkedin.com/in/nyanln ↗</a>
+      <a href="https://github.com/nynln" target="_blank" rel="noopener" class="contact__link">github.com/nynln ↗</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span id="yr"></span> · Nyan Lin Naing · Newcastle upon Tyne
+  </footer>
+
+  <script>
+    /* ─────────────────────────────────────────
+       CARD DATA
+       Add your projects here — easy to extend
+    ───────────────────────────────────────── */
+    const CARDS = [
+      // ── LEFT COLUMN ──────────────────────
+      {
+        col: 'left',
+        type: 'project',
+        year: 2025,
+        id: 'nlp-project',
+        title: 'NLP Text Classification Pipeline',
+        description: 'End-to-end pipeline achieving macro F1 of 0.62 on multi-class classification. TF-IDF feature engineering, ensemble models, full stratified cross-validation in Python.',
+        link: 'https://github.com/nynln',
+        tags: ['Python', 'NLP', 'scikit-learn', 'NLTK'],
+      },
+      {
+        col: 'left',
+        type: 'tweet',
+        year: 2025,
+        name: 'Nyan Lin Naing',
+        handle: '@nynln',
+        text: 'A week of feature engineering later — my NLP classifier finally cracked macro F1 0.60. Small milestone but it feels huge. Onwards to 0.65 📊 #DataScience #MachineLearning',
+        likes: 8,
+        retweets: 2,
+      },
+      {
+        col: 'left',
+        type: 'article',
+        year: 2024,
+        id: 'background-card',
+        quote: '"From mechanical engineering to data science — I learned that whether it\'s a turbine or a neural net, you have to care about whether things actually work."',
+        title: 'BEng Mechanical Engineering',
+        source: 'University of Sunderland',
+        description: 'Where I learned engineering rigour. Led me through MSc Computer Science, then into data science and ML.',
+        link: null,
+      },
+
+      // ── RIGHT COLUMN ─────────────────────
+      {
+        col: 'right',
+        type: 'project',
+        year: 2025,
+        title: 'ETL Data Pipeline · Python + MySQL',
+        description: 'Production-ready ETL pipeline: extracts from multiple raw sources, applies transformation and validation rules, loads into MySQL. Full logging and error recovery.',
+        link: 'https://github.com/nynln',
+        tags: ['Python', 'MySQL', 'ETL', 'pandas'],
+      },
+      {
+        col: 'right',
+        type: 'project',
+        year: 2024,
+        title: 'CGM Wearables — Glycaemic ML Study',
+        description: 'Machine learning analysis of continuous glucose monitor (CGM) wearable data to model glycaemic response patterns. Mixed-effects models and random forests, built in R.',
+        link: 'https://github.com/nynln',
+        tags: ['R', 'tidyverse', 'Random Forest', 'CGM'],
+      },
+      {
+        col: 'right',
+        type: 'article',
+        year: 2024,
+        id: 'skills-card',
+        quote: '"Python · R · SQL · scikit-learn · pandas · NumPy · NLP · ETL · MySQL · tidyverse · Git · Machine Learning"',
+        title: 'What I Work With',
+        source: 'Languages, ML & data engineering',
+        description: 'My core stack for data science, pipeline engineering, and statistical modelling.',
+        link: null,
+      },
+    ];
+
+    /* ─────────────────────────────────────────
+       RENDER HELPERS
+    ───────────────────────────────────────── */
+    function chips(tags) {
+      return `<div class="card__chips">${tags.map(t => `<span class="chip">${t}</span>`).join('')}</div>`;
+    }
+
+    function renderProject(c) {
+      return `<article class="card card--project" data-year="${c.year}"${c.id ? ` id="${c.id}"` : ''}
+                onclick="window.open('${c.link}','_blank')" tabindex="0" role="link"
+                aria-label="${c.title} — opens in new tab">
+        <span class="card__label">Project</span>
+        <h3 class="card__title">${c.title}</h3>
+        <p class="card__desc">${c.description}</p>
+        ${c.tags ? chips(c.tags) : ''}
+        <span class="card__arrow">↗</span>
+      </article>`;
+    }
+
+    function renderTweet(c) {
+      return `<article class="card card--tweet" data-year="${c.year}">
+        <div class="tweet-header">
+          <div class="tweet-avatar">${c.name.charAt(0)}</div>
+          <div class="tweet-meta">
+            <strong>${c.name}</strong>
+            <span class="tweet-handle">${c.handle}</span>
+          </div>
+          <svg class="tweet-x" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.261 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">${c.text}</p>
+        <div class="tweet-stats">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+            ${c.retweets}
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            ${c.likes}
+          </span>
+        </div>
+      </article>`;
+    }
+
+    function renderArticle(c) {
+      const tag = c.link ? `onclick="window.open('${c.link}','_blank')" tabindex="0" role="link"` : '';
+      return `<article class="card card--article" data-year="${c.year}"${c.id ? ` id="${c.id}"` : ''} ${tag}>
+        ${c.quote ? `<blockquote class="card__quote">${c.quote}</blockquote>` : ''}
+        <div class="card__source">
+          <strong>${c.title}</strong>
+          <span>${c.source}</span>
+        </div>
+        <p class="card__desc">${c.description}</p>
+        ${c.link ? '<span class="card__arrow">↗</span>' : ''}
+      </article>`;
+    }
+
+    function renderCard(c) {
+      switch (c.type) {
+        case 'project': return renderProject(c);
+        case 'tweet':   return renderTweet(c);
+        case 'article': return renderArticle(c);
+        default: return '';
+      }
+    }
+
+    /* ─────────────────────────────────────────
+       INJECT CARDS
+    ───────────────────────────────────────── */
+    const colLeft  = document.getElementById('col-left');
+    const colRight = document.getElementById('col-right');
+
+    colLeft.innerHTML  = CARDS.filter(c => c.col === 'left').map(renderCard).join('');
+    colRight.innerHTML = CARDS.filter(c => c.col === 'right').map(renderCard).join('');
+
+    /* ─────────────────────────────────────────
+       SCROLL REVEAL
+    ───────────────────────────────────────── */
+    const revealIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('card--visible');
+          revealIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.card').forEach(el => revealIO.observe(el));
+
+    /* ─────────────────────────────────────────
+       YEAR LABEL — updates as you scroll
+    ───────────────────────────────────────── */
+    const yearEl = document.getElementById('feed-year');
+    const yearIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const y = e.target.dataset.year;
+          if (y && yearEl.textContent !== y) {
+            yearEl.classList.add('feed__year--fade');
+            setTimeout(() => {
+              yearEl.textContent = y;
+              yearEl.classList.remove('feed__year--fade');
+            }, 180);
+          }
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px' });
+    document.querySelectorAll('.card').forEach(el => yearIO.observe(el));
+
+    /* ─────────────────────────────────────────
+       DARK MODE
+    ───────────────────────────────────────── */
+    const root     = document.documentElement;
+    const themeBtn = document.getElementById('theme-btn');
+
+    const saved = localStorage.getItem('nyan-theme');
+    if (saved) root.setAttribute('data-theme', saved);
+
+    themeBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('nyan-theme', next);
+    });
+
+    /* ─────────────────────────────────────────
+       SIDE NAV
+    ───────────────────────────────────────── */
+    const navBtn   = document.getElementById('nav-btn');
+    const sidenav  = document.getElementById('sidenav');
+    const overlay  = document.getElementById('overlay');
+    const closeBtn = document.getElementById('sidenav-close');
+
+    function openNav() {
+      sidenav.classList.add('sidenav--open');
+      overlay.classList.add('overlay--open');
+      navBtn.setAttribute('aria-expanded', 'true');
+      sidenav.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      sidenav.classList.remove('sidenav--open');
+      overlay.classList.remove('overlay--open');
+      navBtn.setAttribute('aria-expanded', 'false');
+      sidenav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    navBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+    sidenav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+    /* ─────────────────────────────────────────
+       PARALLAX on hero illustration
+    ───────────────────────────────────────── */
+    const heroIllo = document.getElementById('hero-illo');
+    window.addEventListener('scroll', () => {
+      if (heroIllo) heroIllo.style.transform = `translateY(${window.scrollY * 0.06}px)`;
+    }, { passive: true });
+
+    /* ─────────────────────────────────────────
+       KEYBOARD: treat project/article cards as links
+    ───────────────────────────────────────── */
+    document.querySelectorAll('.card[role="link"]').forEach(card => {
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') card.click();
+      });
+    });
+
+    /* Year in footer */
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
