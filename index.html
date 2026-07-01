@@ -49,12 +49,220 @@
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero__illo-wrap">
-      <img
-        src="./illustration.svg"
-        alt="Nyan Lin Naing at his data science desk — cartoon illustration"
-        class="hero__illo"
-        id="hero-illo"
-      />
+      <!-- Inline SVG so it can be interactive (eyes follow cursor, blinking, cat, steam…).
+           A standalone copy lives in ./illustration.svg — keep the two in sync. -->
+      <svg id="hero-illo" class="hero__illo" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="Nyan Lin Naing at his data science desk with his cat — interactive illustration">
+        <style>
+          .illo-eye{transform-box:fill-box;transform-origin:center;transition:transform .09s ease-out}
+          .illo-blink .illo-eye{transform:scaleY(.08)}
+          .illo-pupil{transition:transform .15s ease-out}
+          .illo-brow{transform-box:fill-box;transition:transform .18s ease}
+          .illo-blush{transition:opacity .2s ease}
+          #illo-head:hover .illo-brow{transform:translateY(-4px)}
+          #illo-head:hover .illo-blush{opacity:.55}
+          #illo-bars rect{transform-box:fill-box;transform-origin:bottom;animation:illo-grow .7s cubic-bezier(.34,1.3,.45,1) backwards}
+          #illo-bars rect:nth-of-type(1){animation-delay:.15s}
+          #illo-bars rect:nth-of-type(2){animation-delay:.25s}
+          #illo-bars rect:nth-of-type(3){animation-delay:.35s}
+          #illo-bars rect:nth-of-type(4){animation-delay:.45s}
+          #illo-bars rect:nth-of-type(5){animation-delay:.55s}
+          #illo-bars rect:nth-of-type(6){animation-delay:.65s}
+          .illo-line{stroke-dasharray:1;stroke-dashoffset:1;animation:illo-draw 1.1s .8s ease forwards}
+          #illo-steam path{transform-box:fill-box;transform-origin:center bottom;opacity:0;animation:illo-steam 2.8s ease-in-out infinite}
+          #illo-steam path:nth-of-type(2){animation-delay:.9s}
+          #illo-steam path:nth-of-type(3){animation-delay:1.8s}
+          #illo-steam.illo-steam--boost path{animation-duration:1.1s}
+          #illo-tail{transform-box:fill-box;transform-origin:0% 100%;animation:illo-wag 3.4s ease-in-out infinite alternate}
+          #illo-cat{cursor:pointer}
+          #illo-cat:hover #illo-tail{animation-duration:.7s}
+          #illo-mug{cursor:pointer}
+          #illo-plant{transform-box:fill-box;transform-origin:50% 100%;animation:illo-sway 6s ease-in-out infinite alternate}
+          #illo-plant:hover{animation-duration:1.6s}
+          #illo-heart{transform-box:fill-box;transform-origin:center;opacity:0}
+          #illo-heart.illo-heart--pop{animation:illo-heartpop 1s ease-out forwards}
+          .illo-doodle{animation:illo-twinkle 4.5s ease-in-out infinite}
+          @keyframes illo-grow{from{transform:scaleY(0)}}
+          @keyframes illo-draw{to{stroke-dashoffset:0}}
+          @keyframes illo-steam{0%{opacity:0;transform:translateY(5px) scale(.92)}30%{opacity:.65}70%{opacity:.3}100%{opacity:0;transform:translateY(-16px) scale(1.06)}}
+          @keyframes illo-wag{from{transform:rotate(-5deg)}to{transform:rotate(6deg)}}
+          @keyframes illo-sway{from{transform:rotate(-1.8deg)}to{transform:rotate(1.8deg)}}
+          @keyframes illo-heartpop{0%{opacity:0;transform:translateY(8px) scale(.4)}25%{opacity:1;transform:translateY(-4px) scale(1.15)}100%{opacity:0;transform:translateY(-28px) scale(1)}}
+          @keyframes illo-twinkle{0%,100%{opacity:.25}50%{opacity:.6}}
+          @media (prefers-reduced-motion:reduce){#hero-illo *{animation:none!important;transition:none!important}}
+        </style>
+
+        <!-- Backdrop -->
+        <rect x="18" y="16" width="864" height="480" rx="28" fill="var(--illo-bg, #efe3d5)"/>
+
+        <!-- Wall doodles -->
+        <g stroke="var(--illo-doodle, rgba(139,94,60,.4))" fill="var(--illo-doodle, rgba(139,94,60,.4))" stroke-width="2.5" stroke-linecap="round">
+          <path class="illo-doodle" d="M150,76 v16 M142,84 h16" fill="none"/>
+          <path class="illo-doodle" style="animation-delay:1.2s" d="M420,58 v14 M413,65 h14" fill="none"/>
+          <circle class="illo-doodle" style="animation-delay:2.1s" cx="560" cy="70" r="4" stroke="none"/>
+          <circle class="illo-doodle" style="animation-delay:.6s" cx="86" cy="190" r="3.5" stroke="none"/>
+          <path class="illo-doodle" style="animation-delay:3s" d="M846,172 v16 M838,180 h16" fill="none"/>
+          <circle class="illo-doodle" style="animation-delay:1.7s" cx="830" cy="78" r="3" stroke="none"/>
+        </g>
+
+        <!-- Floor shadow -->
+        <ellipse cx="450" cy="482" rx="340" ry="13" fill="var(--illo-shadow, rgba(90,60,30,.10))"/>
+
+        <!-- Shelf (top right) -->
+        <g>
+          <rect x="614" y="70" width="16" height="48" rx="3" fill="#b3573f"/>
+          <rect x="634" y="70" width="14" height="48" rx="3" fill="#7d9970"/>
+          <g transform="rotate(12,668,118)"><rect x="660" y="72" width="15" height="46" rx="3" fill="#c9a227"/></g>
+          <rect x="700" y="62" width="52" height="56" rx="8" fill="#fdfaf5" stroke="#d9c9b5" stroke-width="2"/>
+          <circle cx="716" cy="82" r="6" fill="#e5b54d"/>
+          <path d="M704,110 Q718,88 730,102 Q740,92 748,110 Z" fill="#7d9970"/>
+          <path d="M778,96 Q766,80 772,66 Q782,78 780,96 Z" fill="#6f8f63"/>
+          <path d="M786,96 Q798,80 792,66 Q782,78 784,96 Z" fill="#54724c"/>
+          <rect x="772" y="94" width="26" height="24" rx="4" fill="#b3573f"/>
+          <rect x="596" y="118" width="228" height="12" rx="6" fill="var(--illo-desk, #c99a63)"/>
+          <rect x="620" y="130" width="8" height="14" fill="var(--illo-desk-leg, #aa7d48)"/>
+          <rect x="790" y="130" width="8" height="14" fill="var(--illo-desk-leg, #aa7d48)"/>
+        </g>
+
+        <!-- Monitor -->
+        <g>
+          <rect x="178" y="356" width="110" height="10" rx="5" fill="var(--illo-metal, #3d352c)"/>
+          <rect x="222" y="306" width="22" height="52" fill="var(--illo-metal, #3d352c)"/>
+          <rect x="116" y="130" width="252" height="182" rx="18" fill="var(--illo-metal, #3d352c)"/>
+          <rect x="128" y="142" width="228" height="158" rx="10" fill="#211c16"/>
+          <circle cx="242" cy="136" r="2.5" fill="#221d18"/>
+          <rect x="142" y="152" width="70" height="6" rx="3" fill="#4a4038"/>
+          <rect x="142" y="163" width="48" height="5" rx="2.5" fill="#4a4038" opacity=".7"/>
+          <rect x="142" y="173" width="60" height="5" rx="2.5" fill="#4a4038" opacity=".45"/>
+          <line x1="146" y1="284" x2="340" y2="284" stroke="#4a4038" stroke-width="2"/>
+          <g id="illo-bars">
+            <rect x="150" y="238" width="22" height="44" rx="4" fill="#c98a5b"/>
+            <rect x="182" y="208" width="22" height="74" rx="4" fill="#8b5e3c"/>
+            <rect x="214" y="248" width="22" height="34" rx="4" fill="#d9b08c"/>
+            <rect x="246" y="190" width="22" height="92" rx="4" fill="#a8763e"/>
+            <rect x="278" y="224" width="22" height="58" rx="4" fill="#c98a5b"/>
+            <rect x="310" y="212" width="22" height="70" rx="4" fill="#e0c9a6"/>
+          </g>
+          <polyline class="illo-line" pathLength="1" points="161,232 193,202 225,242 257,184 289,218 321,206"
+                    stroke="#f0e3d0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <g transform="rotate(8,361,151)">
+            <rect x="344" y="134" width="34" height="34" rx="3" fill="#f2d06b"/>
+            <path d="M350,146 h20 M350,153 h14 M350,160 h18" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </g>
+
+        <!-- Chair -->
+        <rect x="372" y="258" width="196" height="124" rx="30" fill="#55463a"/>
+
+        <!-- Person body + arms (desk slab drawn after, hides the wrists) -->
+        <path d="M380,368 L380,336 Q380,298 420,286 Q444,278 470,278 Q496,278 520,286 Q560,298 560,336 L560,368 Z" fill="#8b5e3c"/>
+        <path d="M448,284 Q470,296 492,284" stroke="#6e4a2f" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M398,308 Q382,342 424,360" stroke="#8b5e3c" stroke-width="28" stroke-linecap="round" fill="none"/>
+        <path d="M542,308 Q558,342 516,360" stroke="#8b5e3c" stroke-width="28" stroke-linecap="round" fill="none"/>
+
+        <!-- Neck -->
+        <rect x="452" y="242" width="36" height="46" rx="10" fill="#e8b183"/>
+
+        <!-- Head -->
+        <g id="illo-head">
+          <circle cx="412" cy="198" r="11" fill="#e8b183"/><circle cx="412" cy="198" r="5" fill="#d29063"/>
+          <circle cx="528" cy="198" r="11" fill="#e8b183"/><circle cx="528" cy="198" r="5" fill="#d29063"/>
+          <ellipse cx="470" cy="190" rx="58" ry="62" fill="#e8b183"/>
+          <path d="M414,196 C410,130 434,106 470,104 C506,106 530,130 526,196 C522,162 506,142 470,142 C434,142 418,162 414,196 Z" fill="#241a10"/>
+          <path class="illo-brow" d="M428,168 Q444,161 458,166" stroke="#241a10" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path class="illo-brow" d="M482,166 Q496,161 512,168" stroke="#241a10" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <g class="illo-eye">
+            <ellipse cx="446" cy="192" rx="13" ry="12.5" fill="#fff"/>
+            <g class="illo-pupil" data-range="5">
+              <circle cx="446" cy="192" r="6.5" fill="#2b1c10"/>
+              <circle cx="448.5" cy="189.5" r="2.2" fill="#fff"/>
+            </g>
+          </g>
+          <g class="illo-eye">
+            <ellipse cx="494" cy="192" rx="13" ry="12.5" fill="#fff"/>
+            <g class="illo-pupil" data-range="5">
+              <circle cx="494" cy="192" r="6.5" fill="#2b1c10"/>
+              <circle cx="496.5" cy="189.5" r="2.2" fill="#fff"/>
+            </g>
+          </g>
+          <ellipse class="illo-blush" cx="432" cy="215" rx="8" ry="5" fill="#e08a5f" opacity=".3"/>
+          <ellipse class="illo-blush" cx="508" cy="215" rx="8" ry="5" fill="#e08a5f" opacity=".3"/>
+          <path d="M466,206 Q470,214 474,206" stroke="#c98a5b" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M450,228 Q470,244 490,228" stroke="#a06a42" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Desk -->
+        <rect x="60" y="366" width="780" height="20" rx="10" fill="var(--illo-desk, #c99a63)"/>
+        <rect x="108" y="386" width="20" height="88" rx="7" fill="var(--illo-desk-leg, #aa7d48)"/>
+        <rect x="772" y="386" width="20" height="88" rx="7" fill="var(--illo-desk-leg, #aa7d48)"/>
+
+        <!-- Desk plant (sways) -->
+        <g id="illo-plant">
+          <path d="M334,326 Q312,300 316,270 Q328,290 336,318 Z" fill="#7d9970"/>
+          <path d="M342,326 Q342,292 340,262 Q350,288 346,320 Z" fill="#8fae7f"/>
+          <path d="M344,326 Q366,300 362,270 Q350,290 342,318 Z" fill="#5f7f56"/>
+          <path d="M336,324 Q318,310 314,288 Q330,300 338,320 Z" fill="#54724c"/>
+          <path d="M342,324 Q360,310 364,288 Q348,300 340,320 Z" fill="#6f8f63"/>
+          <rect x="314" y="322" width="48" height="10" rx="5" fill="#a4552e"/>
+          <path d="M318,332 L358,332 L352,366 L324,366 Z" fill="#b3573f"/>
+        </g>
+
+        <!-- Keyboard + hands -->
+        <rect x="404" y="350" width="132" height="13" rx="6.5" fill="var(--illo-metal, #3d352c)"/>
+        <line x1="414" y1="356" x2="526" y2="356" stroke="rgba(245,237,230,.18)" stroke-width="1.5"/>
+        <circle cx="434" cy="351" r="9" fill="#e8b183"/>
+        <circle cx="506" cy="351" r="9" fill="#e8b183"/>
+
+        <!-- Coffee mug + steam -->
+        <g id="illo-mug">
+          <g id="illo-steam">
+            <path d="M610,312 Q606,300 610,288 Q614,276 610,264" stroke="#c9a183" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M624,308 Q620,296 624,282 Q628,270 624,258" stroke="#c9a183" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M638,312 Q634,300 638,288 Q642,276 638,264" stroke="#c9a183" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+          <path d="M648,332 Q668,332 668,344 Q668,356 648,356" stroke="#b35c33" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <rect x="600" y="322" width="48" height="44" rx="9" fill="#b35c33"/>
+          <ellipse cx="624" cy="323" rx="24" ry="8" fill="#cf7444"/>
+          <ellipse cx="624" cy="323" rx="19" ry="5.5" fill="#3a2414"/>
+          <path d="M608,332 Q610,340 608,350" stroke="rgba(255,255,255,.3)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Cat -->
+        <g id="illo-cat">
+          <path id="illo-tail" d="M786,346 Q834,334 842,302 Q846,282 828,278" stroke="#e59d54" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <ellipse cx="756" cy="328" rx="34" ry="40" fill="#e59d54"/>
+          <ellipse cx="756" cy="340" rx="20" ry="26" fill="#f6cf96"/>
+          <ellipse cx="742" cy="364" rx="12" ry="7" fill="#e59d54"/>
+          <ellipse cx="770" cy="364" rx="12" ry="7" fill="#e59d54"/>
+          <polygon points="732,258 736,234 752,254" fill="#e59d54"/>
+          <polygon points="735,255 738,240 749,252" fill="#f0a8b4"/>
+          <polygon points="760,254 776,234 780,258" fill="#e59d54"/>
+          <polygon points="763,252 774,240 777,255" fill="#f0a8b4"/>
+          <circle cx="756" cy="272" r="27" fill="#e59d54"/>
+          <path d="M744,252 Q748,244 752,250 M760,250 Q764,242 768,250" stroke="#cd7f3f" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g class="illo-eye">
+            <ellipse cx="745" cy="268" rx="6.5" ry="7" fill="#f7ecd2"/>
+            <g class="illo-pupil" data-range="2">
+              <ellipse cx="745" cy="268" rx="3" ry="4.2" fill="#201409"/>
+              <circle cx="746.2" cy="266" r="1.2" fill="#fff"/>
+            </g>
+          </g>
+          <g class="illo-eye">
+            <ellipse cx="767" cy="268" rx="6.5" ry="7" fill="#f7ecd2"/>
+            <g class="illo-pupil" data-range="2">
+              <ellipse cx="767" cy="268" rx="3" ry="4.2" fill="#201409"/>
+              <circle cx="768.2" cy="266" r="1.2" fill="#fff"/>
+            </g>
+          </g>
+          <polygon points="756,282 751,287 761,287" fill="#e2707e"/>
+          <path d="M756,287 L756,291 M756,291 Q751,296 746,293 M756,291 Q761,296 766,293" stroke="#a05c34" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <g stroke="#b98a5c" stroke-width="1.5" opacity=".7">
+            <line x1="742" y1="283" x2="716" y2="279"/><line x1="742" y1="288" x2="716" y2="292"/>
+            <line x1="770" y1="283" x2="794" y2="279"/><line x1="770" y1="288" x2="794" y2="292"/>
+          </g>
+          <path id="illo-heart" d="M756,232 C756,225 747,221 743,227 C739,233 747,240 756,247 C765,240 773,233 769,227 C765,221 756,225 756,232 Z" fill="#d9645f"/>
+        </g>
+      </svg>
     </div>
 
     <p class="hero__bio">
@@ -333,6 +541,59 @@
     window.addEventListener('scroll', () => {
       if (heroIllo) heroIllo.style.transform = `translateY(${window.scrollY * 0.06}px)`;
     }, { passive: true });
+
+    /* ─────────────────────────────────────────
+       ILLUSTRATION INTERACTIVITY
+       — eyes follow cursor, blinking,
+         pet the cat, tap the mug
+    ───────────────────────────────────────── */
+    (() => {
+      const svg = heroIllo;
+      if (!svg || !svg.querySelectorAll) return;
+
+      /* Pupils (person + cat) follow the cursor */
+      const pupils = svg.querySelectorAll('.illo-pupil');
+      let raf = null;
+      window.addEventListener('mousemove', e => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = null;
+          pupils.forEach(p => {
+            const r = p.getBoundingClientRect();
+            const dx = e.clientX - (r.left + r.width / 2);
+            const dy = e.clientY - (r.top + r.height / 2);
+            const d = Math.hypot(dx, dy) || 1;
+            const range = parseFloat(p.dataset.range || 4) * Math.min(1, d / 240);
+            p.style.transform = `translate(${(dx / d) * range}px, ${(dy / d) * range}px)`;
+          });
+        });
+      }, { passive: true });
+
+      /* Random blinking (person + cat together) */
+      (function blink() {
+        setTimeout(() => {
+          svg.classList.add('illo-blink');
+          setTimeout(() => { svg.classList.remove('illo-blink'); blink(); }, 150);
+        }, 2400 + Math.random() * 2600);
+      })();
+
+      /* Pet the cat → heart pops up */
+      const cat = svg.querySelector('#illo-cat');
+      const heart = svg.querySelector('#illo-heart');
+      if (cat && heart) cat.addEventListener('click', () => {
+        heart.classList.remove('illo-heart--pop');
+        void heart.getBoundingClientRect();      // force restart of the animation
+        heart.classList.add('illo-heart--pop');
+      });
+
+      /* Tap the mug → burst of steam */
+      const mug = svg.querySelector('#illo-mug');
+      const steam = svg.querySelector('#illo-steam');
+      if (mug && steam) mug.addEventListener('click', () => {
+        steam.classList.add('illo-steam--boost');
+        setTimeout(() => steam.classList.remove('illo-steam--boost'), 2600);
+      });
+    })();
 
     /* ─────────────────────────────────────────
        KEYBOARD: treat project/article cards as links

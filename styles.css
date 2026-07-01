@@ -20,6 +20,14 @@
   --chip-bg:       #f0e6da;
   --chip-text:     #7a4e2e;
 
+  /* Hero illustration */
+  --illo-bg:       #efe3d5;
+  --illo-desk:     #c99a63;
+  --illo-desk-leg: #aa7d48;
+  --illo-metal:    #3d352c;
+  --illo-shadow:   rgba(90, 60, 30, 0.10);
+  --illo-doodle:   rgba(139, 94, 60, 0.4);
+
   /* Typography */
   --font-body:     'Inter', system-ui, sans-serif;
   --font-serif:    'Lora', Georgia, serif;
@@ -43,6 +51,14 @@
   --shadow-hover:  0 6px 28px rgba(0,0,0,0.4);
   --chip-bg:       #2e2820;
   --chip-text:     #c49a6e;
+
+  /* Hero illustration — dark */
+  --illo-bg:       #252019;
+  --illo-desk:     #8a6a42;
+  --illo-desk-leg: #6f5435;
+  --illo-metal:    #4a443c;
+  --illo-shadow:   rgba(0, 0, 0, 0.35);
+  --illo-doodle:   rgba(196, 154, 110, 0.35);
 }
 
 /* ── RESET ── */
@@ -237,6 +253,7 @@ button { border: none; background: none; cursor: pointer; }
   overflow: hidden;
 }
 .hero__illo {
+  display: block;
   width: 100%;
   height: auto;
   filter: drop-shadow(0 6px 24px rgba(80, 50, 20, 0.10));
